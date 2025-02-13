@@ -1,12 +1,15 @@
-// var a,b,total;
-// a = parseFloat(prompt("Introduce el primer número"));
-// b = parseFloat(prompt("Introduce el segundo número"));
-// total = a + b;
-// alert("La suma de los dos números es: " + total);
-document.getElementById("sumarjs").addEventListener("submit", function (event) {
-    event.preventDefault();
-    var a = parseFloat(document.getElementById("number1").value);
-    var b = parseFloat(document.getElementById("number2").value);
-    var total = a + b;
-    document.getElementById("resultado").textContent = "La suma de los numeros ingresados es: " + total;
-});
+const dipslay = document.querySelector('#display');
+const button  = document.querySelectorAll('button');
+button.forEach((btn) => {
+    btn.addEventListener('click', () => {
+       if(btn.id === "="){
+           display.value = eval(display.value);
+         }else if(btn.id === "ac"){
+           display.value = "";
+            }else if(btn.id === "de"){
+                display.value = display.value.slice(0, -1);
+            }else{
+                display.value += btn.id;
+            }
+    });
+}); 
